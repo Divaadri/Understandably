@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understandably</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="assets/cloud1.svg" alt="" class="cloud cloudTop">
+    <img src="assets/cloud2.svg" alt="" class="cloud cloudBottom">
+
+    <div id="splash">
+        <div class="splashBrand">
+            <img src="assets/logo.svg" alt="Understandably" class="splashLogo">
+            <p>UNDERSTANDABLY</p>
+        </div>
+    </div>
+
+    <div class="appFrame">
+        <header class="topbar">
+            <div class="brandMark">
+                <img src="assets/logo.svg" alt="Understandably">
+                <div class="brandCopy">
+                    <strong>Understandably</strong>
+                    <span>AI Classroom Twin</span>
+                </div>
+            </div>
+
+            <div class="navRule" style="opacity: 0;"></div>
+
+            <nav class="navLinks" aria-label="Main navigation">
+                <button id="homeBtn" type="button">Home</button>
+                <span class="adminStatus">
+                    <span class="statusDot"></span>
+                    Admin
+                </span>
+                <span id="currentDate">6 Aug 2026</span>
+            </nav>
+        </header>
+
+        <main>
+            <section id="homeScreen" class="homeScreen">
+                <div class="homePanel">
+                    <h1>Select Class to<br>Analyze</h1>
+
+                    <label class="visuallyHidden" for="classSelect">Select class</label>
+                    <select id="classSelect">
+                        <option value="">Select class</option>
+                        <option value="class8a">Grade 8A</option>
+                        <option value="class8b">Grade 8B</option>
+                        <option value="class8c">Grade 8C</option>
+                        <option value="class8d">Grade 8D</option>
+                    </select>
+
+                    <button id="analyzeBtn" type="button">Analyze</button>
+                </div>
+            </section>
+
+            <section id="resultScreen" class="resultScreen" hidden>
+                <section class="classroomStage" aria-label="Classroom digital twin">
+                    <div class="scoreStrip">
+                        <span>Overall</span>
+                        <strong id="overallScore">--</strong>
+                    </div>
+
+                    <div class="planShell">
+                        <img id="classImage" src="" alt="Selected classroom" class="analysisSource">
+                        <div id="overlay" aria-label="Seat markers"></div>
+                    </div>
+                </section>
+
+                <aside class="insightPanel">
+                    <div class="tabs">
+                        <button id="recommendationTab" class="tab active" type="button">
+                            Recommendation
+                        </button>
+                        <button id="bestsTab" class="tab" type="button">
+                            Bests
+                        </button>
+                        <button id="seatTab" class="tab" type="button">
+                            Seat Analysis
+                        </button>
+                    </div>
+
+                    <div id="recommendationPanel" class="tabContent">
+                        <div id="recommendations"></div>
+                    </div>
+
+                    <div id="bestsPanel" class="tabContent hidden">
+                        <div id="bestsInfo">Analyze a classroom to view best seats.</div>
+                    </div>
+
+                    <div id="seatPanel" class="tabContent hidden">
+                        <div id="seatInfo">Click a seat to view analytics.</div>
+                    </div>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+    <div id="loading" hidden>
+        <div class="loaderCard">
+            <img src="assets/logo.svg" alt="Understandably" class="loaderLogo">
+            <h2>Analyzing Classroom...</h2>
+            <div class="loaderDots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
